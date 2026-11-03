@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test and temporary exports
+coverage/
+*.log
+*.zip
+.env
+.env.*
+!.env.example
+
+# Dependencies (none required for the extension runtime)
+node_modules/

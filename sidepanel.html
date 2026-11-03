@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark"><title>Base44 Toolkit</title><link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark"><span></span><span></span><span></span></div><div><div class="eyebrow">PROJECT OPERATIONS</div><div class="brand-name">Base44 <b>Toolkit</b></div></div></div>
+      <span class="version">4.0.0</span>
+    </header>
+    <section class="workspace-card">
+      <div class="workspace-top"><span class="eyebrow">ACTIVE WORKSPACE</span><span class="connection" id="connection"><i></i> Checking</span></div>
+      <h1 id="projectName">Connect a Base44 project</h1>
+      <p id="projectHint">Open an authorised project in this tab, then queue a verified backup.</p>
+      <div class="project-row"><code id="projectId">No project detected</code><button id="detectBtn" class="quiet-button" type="button">Detect</button></div>
+    </section>
+    <nav class="tabs" aria-label="Workspace sections">
+      <button class="tab active" data-view="export" type="button">Export</button>
+      <button class="tab" data-view="jobs" type="button">Jobs <span id="jobCount">0</span></button>
+      <button class="tab" data-view="restore" type="button">Restore</button>
+      <button class="tab" data-view="settings" type="button">Tools</button>
+    </nav>
+    <main>
+      <section class="view active" id="view-export">
+        <div class="section-heading"><div><div class="eyebrow">01 / BACKUP</div><h2>Project export</h2></div><span class="section-number">01</span></div>
+        <div class="feature-row"><div class="feature-icon">↗</div><div><b>Resumable ZIP64 archive</b><p>Files are staged in IndexedDB and assembled as Blob parts. ZIP64 supports 64-bit archive sizes and offsets.</p></div></div>
+        <label class="field"><span>Project ID</span><input id="projectInput" autocomplete="off" spellcheck="false" placeholder="Base44 project ID"></label>
+        <button id="startBtn" class="primary-button" type="button"><span>＋</span> Queue full project export</button>
+        <label class="field batch-field"><span>Batch exports <small>One project ID per line</small></span><textarea id="batchInput" rows="4" spellcheck="false" placeholder="project_id_one&#10;project_id_two"></textarea></label>
+        <button id="batchBtn" class="secondary-button" type="button">Queue batch exports</button>
+        <div class="note"><span>ⓘ</span><p>Keep the authorised Base44 project tab open. The export endpoint currently returns a project response as a whole; the archive stage avoids building one giant ZIP byte array.</p></div>
+        <div class="section-heading recent-heading"><div><div class="eyebrow">02 / ACTIVITY</div><h2>Recent export jobs</h2></div><button class="link-button" id="viewAllJobs" type="button">View all</button></div>
+        <div id="recentJobs" class="job-list empty-state">No export jobs yet.</div>
+      </section>
+      <section class="view" id="view-jobs">
+        <div class="section-heading"><div><div class="eyebrow">QUEUE / MONITOR</div><h2>Export jobs</h2></div><button id="refreshJobs" class="quiet-button" type="button">Refresh</button></div>
+        <div id="allJobs" class="job-list empty-state">No export jobs yet.</div>
+      </section>
+      <section class="view" id="view-restore">
+        <div class="section-heading"><div><div class="eyebrow">RECOVERY / SAFETY</div><h2>Restore centre</h2></div><span class="section-number">03</span></div>
+        <div class="restore-status"><div class="restore-symbol">↶</div><div><b>Portable recovery is ready</b><p id="restoreStatus">No supported Base44 project write/import interface has been detected.</p></div></div>
+        <div class="restore-steps"><div><span>01</span><div><b>Keep a verified archive</b><p>Use the ZIP64 backup as your immutable source copy.</p></div></div><div><span>02</span><div><b>Review the recovery reports</b><p>Check file inventory, checksums, dependencies and missing references.</p></div></div><div><span>03</span><div><b>Restore through an official import path</b><p>Use Base44's supported import workflow when available. No private or guessed write endpoint is called.</p></div></div></div>
+        <button id="restorePlanBtn" class="secondary-button" type="button">Download restore runbook</button>
+        <div class="note warning"><span>!</span><p>Automatic remote restore is deliberately disabled until Base44 provides a documented, supported write/import API. This prevents accidental project overwrites.</p></div>
+      </section>
+      <section class="view" id="view-settings">
+        <div class="section-heading"><div><div class="eyebrow">UTILITIES</div><h2>Recovery tools</h2></div></div>
+        <a class="tool-link" href="classic.html" target="_blank"><span class="tool-icon">⌘</span><span><b>Classic editor recovery</b><small>Legacy visible-editor path recovery and diagnostics</small></span><span>↗</span></a>
+        <a class="tool-link" href="docs/ARCHITECTURE.md" target="_blank"><span class="tool-icon">⌘</span><span><b>Architecture guide</b><small>Background jobs, storage and ZIP64 design</small></span><span>↗</span></a>
+        <a class="tool-link" href="docs/RESTORE-WORKFLOW.md" target="_blank"><span class="tool-icon">↶</span><span><b>Restore workflow</b><small>Safe recovery and adapter contract</small></span><span>↗</span></a>
+        <div class="settings-card"><b>Local-first processing</b><p>Project data is staged in this extension's IndexedDB and packaged locally. No third-party upload service is used.</p><div class="setting-line"><span>Archive format</span><strong>ZIP64 / Store</strong></div><div class="setting-line"><span>Job persistence</span><strong>IndexedDB</strong></div><div class="setting-line"><span>Background lifecycle</span><strong>MV3 event-driven</strong></div></div>
+      </section>
+    </main>
+    <footer><span>BASE44 TOOLKIT</span><span>LOCAL-FIRST · MV3</span></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="sidepanel.js"></script>
+</body></html>
