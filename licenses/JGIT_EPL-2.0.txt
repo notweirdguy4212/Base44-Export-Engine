@@ -1,0 +1,3 @@
+JGit is distributed under the Eclipse Public License 2.0.
+Project: https://www.eclipse.org/jgit/
+License text: https://www.eclipse.org/legal/epl-2.0/

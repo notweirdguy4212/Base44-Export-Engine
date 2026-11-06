@@ -1,0 +1,4 @@
+Sora Editor is distributed under the GNU Lesser General Public License, version 2.1 or (at your option) any later version.
+Project: https://github.com/Rosemoe/sora-editor
+License text: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
+Copyright (C) 2020-2026 Rosemoe.

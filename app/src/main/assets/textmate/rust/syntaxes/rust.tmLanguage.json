@@ -1,0 +1,57 @@
+{
+  "scopeName": "source.rust",
+  "name": "rust",
+  "patterns": [
+    {
+      "name": "comment.line",
+      "match": "//.*$"
+    },
+    {
+      "name": "comment.block",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
+      "name": "string.quoted.double",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "string.quoted.single",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "constant.numeric",
+      "match": "\\b[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?\\b"
+    },
+    {
+      "name": "constant.language",
+      "match": "\\b(true|false|null|nil|None|True|False|undefined|NaN)\\b"
+    },
+    {
+      "name": "keyword.control",
+      "match": "\\b(if|else|for|while|do|switch|case|break|continue|return|try|catch|finally|throw|throws|new|class|interface|extends|implements|public|private|protected|static|final|const|let|var|fun|def|fn|func|function|async|await|import|from|package|namespace|using|struct|enum|trait|impl|match|where|in|is|as|this|self|super|void|int|string|boolean|bool|char|float|double|long|short|byte|export|default|yield|with|lambda|pass|raise|del|global|nonlocal|extern|pub|mut|mod|use|type|protocol|extension|operator|override|abstract|virtual|readonly|volatile|transient)\\b"
+    },
+    {
+      "name": "entity.name.function",
+      "match": "(?<=\\b)([A-Za-z_][A-Za-z0-9_]*)(?=\\s*\\()"
+    },
+    {
+      "name": "variable",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+    }
+  ]
+}

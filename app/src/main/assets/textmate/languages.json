@@ -1,0 +1,89 @@
+{
+  "languages": [
+    {
+      "name": "python",
+      "scopeName": "source.python",
+      "grammar": "textmate/python/syntaxes/python.tmLanguage.json"
+    },
+    {
+      "name": "javascript",
+      "scopeName": "source.js",
+      "grammar": "textmate/javascript/syntaxes/javascript.tmLanguage.json"
+    },
+    {
+      "name": "typescript",
+      "scopeName": "source.ts",
+      "grammar": "textmate/typescript/syntaxes/typescript.tmLanguage.json"
+    },
+    {
+      "name": "kotlin",
+      "scopeName": "source.kotlin",
+      "grammar": "textmate/kotlin/syntaxes/kotlin.tmLanguage.json"
+    },
+    {
+      "name": "java",
+      "scopeName": "source.java",
+      "grammar": "textmate/java/syntaxes/java.tmLanguage.json"
+    },
+    {
+      "name": "c",
+      "scopeName": "source.c",
+      "grammar": "textmate/c/syntaxes/c.tmLanguage.json"
+    },
+    {
+      "name": "cpp",
+      "scopeName": "source.cpp",
+      "grammar": "textmate/cpp/syntaxes/cpp.tmLanguage.json"
+    },
+    {
+      "name": "go",
+      "scopeName": "source.go",
+      "grammar": "textmate/go/syntaxes/go.tmLanguage.json"
+    },
+    {
+      "name": "rust",
+      "scopeName": "source.rust",
+      "grammar": "textmate/rust/syntaxes/rust.tmLanguage.json"
+    },
+    {
+      "name": "php",
+      "scopeName": "source.php",
+      "grammar": "textmate/php/syntaxes/php.tmLanguage.json"
+    },
+    {
+      "name": "ruby",
+      "scopeName": "source.ruby",
+      "grammar": "textmate/ruby/syntaxes/ruby.tmLanguage.json"
+    },
+    {
+      "name": "swift",
+      "scopeName": "source.swift",
+      "grammar": "textmate/swift/syntaxes/swift.tmLanguage.json"
+    },
+    {
+      "name": "dart",
+      "scopeName": "source.dart",
+      "grammar": "textmate/dart/syntaxes/dart.tmLanguage.json"
+    },
+    {
+      "name": "html",
+      "scopeName": "text.html.basic",
+      "grammar": "textmate/html/syntaxes/html.tmLanguage.json"
+    },
+    {
+      "name": "css",
+      "scopeName": "source.css",
+      "grammar": "textmate/css/syntaxes/css.tmLanguage.json"
+    },
+    {
+      "name": "json",
+      "scopeName": "source.json",
+      "grammar": "textmate/json/syntaxes/json.tmLanguage.json"
+    },
+    {
+      "name": "markdown",
+      "scopeName": "text.html.markdown",
+      "grammar": "textmate/markdown/syntaxes/markdown.tmLanguage.json"
+    }
+  ]
+}
